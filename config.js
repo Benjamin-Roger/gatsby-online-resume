@@ -175,8 +175,8 @@ const CERTIFICATIONS = [
 ];
 
 module.exports = {
-  siteTitle: `${FIRST_NAME} ${LAST_NAME} Resume`, // <title>
-  manifestName: `${FIRST_NAME} ${LAST_NAME} Resume`,
+  siteTitle: `${FIRST_NAME} ${LAST_NAME}`, // <title>
+  manifestName: `${FIRST_NAME} ${LAST_NAME} | Online Resume`,
   manifestShortName: 'Resume', // max 12 characters
   manifestStartUrl: '/',
   manifestBackgroundColor: '#28407f',
