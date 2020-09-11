@@ -40,7 +40,7 @@ const IndexPage = ({ data }) => {
             </h1>
             <div className="subheading mb-5">
               <a href={`mailto:${config.email}`}>{config.email} · </a>
-              {config.address} · {config.phone}
+              <span className="d-block d-md-inline">{config.address} ·</span> <span className="d-block d-md-inline">{config.phone}</span>
             </div>
             <div className="lead" dangerouslySetInnerHTML={{ __html: config.bio }} />
             <a className="mt-2 mb-5 btn btn-teal border-0 p-3 pl-4" href={config.freelanceSite.url} title={config.freelanceSite.title}>{config.freelanceSite.title}</a>
