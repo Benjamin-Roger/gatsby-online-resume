@@ -4,7 +4,7 @@ const countriesName = {
     ci:"Côte d'Ivoire",
     bj:"Bénin",
     cn:"Chine",
-    africa:"Afrique"
+    africa:"Multiples pays d'Afrique - Transrégional"
 }
 
 
