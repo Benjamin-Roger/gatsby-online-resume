@@ -34,29 +34,38 @@ h1 {
   line-height: 30px;
   
   @media (min-width:700px) {
-    font-size:6rem;
-    line-height:5.5rem;
+    font-size:5rem;
+    line-height:5rem;
   }
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   
   @media (min-width:700px) {
-    font-size:3.5rem;
+    font-size:3rem;
   }
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  @media (min-width:700px) {
+    font-size:1.8rem;
+  }
 }
 
-h4 {
-  font-size: 1.5rem;
+h4, .subheading {
+  font-size: 1.3rem;
+  @media (min-width:700px) {
+    font-size:1.5rem;
+  }
 }
 
 h5 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  @media (min-width:700px) {
+    font-size:1.2rem;
+  }
 }
 
 p ~ ul {
@@ -86,13 +95,15 @@ a {
   font-size: 1.5rem;
 }
 
-
+.no-breakline {
+  line-break: none;
+}
 
 .social-icons {
   a {
     display: inline-flex;
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 3rem;
+    width: 3rem;
     background-color: $gray-700;
     color: $white !important;
     border-radius: 100%;
