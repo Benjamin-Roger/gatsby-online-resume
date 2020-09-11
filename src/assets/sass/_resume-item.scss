@@ -54,7 +54,7 @@ section.resume-section {
     }
 
     &.timeline {
-      border-left: 5px dotted $primary + 50;
+      border-left: 5px dotted color.scale($primary, $lightness: 50%);
 
       .align-fix {
         margin-bottom: -20px;

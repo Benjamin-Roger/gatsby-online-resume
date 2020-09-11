@@ -5,7 +5,7 @@ import Scroll from './Scroll';
 import Particles from 'react-particles-js';
 
 
-import avatar from '../assets/images/CV_white.png';
+import avatar from '../assets/images/cv_white.png';
 import config from '../../config';
 
 export class Sidebar extends Component {
