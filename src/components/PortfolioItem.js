@@ -5,7 +5,7 @@ import countriesName from '../utils/countriesName';
 
 
 const PortfolioItem = ({ name, company, url, url_project, categories, start_date, end_date, flag_id, children }) => (
-    <div className="resume-item d-flex flex-column flex-md-row justify-content-between mt-5">
+    <div className={"resume-item portfolio-item d-flex flex-column flex-md-row justify-content-between mt-5 p-3 shadow-sm rounded " + (categories.includes("Consulting") ? "consulting" : "")}>
         <div className="resume-content">
             <h4 className="mb-0">{name}</h4>
             <div className="mb-3 mt-1 d-flex">
