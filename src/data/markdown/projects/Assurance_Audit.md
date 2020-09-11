@@ -1,5 +1,5 @@
 ---
-name: "Audit SI"
+name: "Audit SI - Assurance"
 company: "Compagnies d'assurance centrale et ouest-africaines"
 url: ""
 url_project: ""
