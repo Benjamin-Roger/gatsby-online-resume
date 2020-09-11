@@ -1,203 +1,270 @@
 import React from 'react';
 
+import { graphql } from 'gatsby';
+
 import Layout from '../components/Layout';
-
-// import { Link } from 'gatsby';
+import ResumeItem from '../components/ResumeItem';
+import PortfolioItem from '../components/PortfolioItem';
 import Sidebar from '../components/Sidebar';
+import LineChart from '../components/LineChart';
+
 import config from '../../config';
-const IndexPage = () => (
-  <Layout>
-    <Sidebar />
-    <div className="container-fluid p-0">
-      <section
-        className="resume-section p-3 p-lg-5 d-flex align-items-center"
-        id="about"
-      >
-        <div className="w-100">
-          <h1 className="mb-0">
-            {config.firstName}
-            <span className="text-primary"> {config.lastName}</span>
-          </h1>
-          <div className="subheading mb-5">
-            <a href={`mailto:${config.email}`}>{config.email} · </a>
-            {config.address} · {config.phone}
+
+
+
+const IndexPage = ({ data }) => {
+
+  const experiences = data.experiences.edges;
+  const education = data.education.edges;
+  const portfolio = data.portfolio.edges;
+
+
+
+
+  return (
+    <Layout title="Accueil">
+      <Sidebar />
+      <div className="container-fluid p-0">
+
+
+        {/* About */}
+
+        <section
+          className="resume-section p-3 p-lg-5 d-flex align-items-center"
+          id="about"
+        >
+          <div className="w-100">
+            <h1 className="mb-0">
+              {config.firstName}
+              <span className="text-primary"> {config.lastName}</span>
+            </h1>
+            <div className="subheading mb-5">
+              <a href={`mailto:${config.email}`}>{config.email} · </a>
+              {config.address} · {config.phone}
+            </div>
+            <div className="lead" dangerouslySetInnerHTML={{ __html: config.bio }} />
+            <a className="mt-2 mb-5 btn btn-teal border-0 p-3 pl-4" href={config.freelanceSite.url} title={config.freelanceSite.title}>{config.freelanceSite.title}</a>
+            <div className="social-icons">
+              {config.socialLinks.map((social,key) => {
+                const { icon, url } = social;
+                return (
+                  <a key={key} href={url}>
+                    <i className={`fab ${icon}`}></i>
+                  </a>
+                );
+              })}
+            </div>
           </div>
-          <p className="lead mb-5">{config.bio}</p>
-          <div className="social-icons">
-            {config.socialLinks.map((social) => {
-              const { icon, url } = social;
-              return (
-                <a key={url} href={url}>
-                  <i className={`fab ${icon}`}></i>
-                </a>
-              );
-            })}
+        </section>
+
+        <hr className="m-0" />
+
+
+        {/* Experiences */}
+
+        <section
+          className="resume-section p-3 p-lg-5 d-flex justify-content-center"
+          id="experience"
+        >
+          <div className="w-100">
+            <h2 className="mb-5">Expériences</h2>
+
+            <div className="pl-3 pl-lg-5 resume-item-wrapper timeline">
+
+              <div className="align-fix"></div>
+              {experiences.map((experience, key) => (
+                <>
+                  <ResumeItem
+                    key={key}
+                    {...experience.node.frontmatter}>
+                    <div dangerouslySetInnerHTML={{ __html: experience.node.html }} />
+                  </ResumeItem>
+                </>))
+              }
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <hr className="m-0" />
+        <hr className="m-0" />
 
-      <section
-        className="resume-section p-3 p-lg-5 d-flex justify-content-center"
-        id="experience"
-      >
-        <div className="w-100">
-          <h2 className="mb-5">Experience</h2>
-          {config.experienceList.map((experience) => {
-            const { title, company, description, period } = experience;
-            return (
-              <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div className="resume-content">
-                  <h3 className="mb-0">{title}</h3>
-                  <div className="subheading mb-3">{company}</div>
-                  <p>{description}</p>
-                </div>
-                <div className="resume-date text-md-right">
-                  <span className="text-primary">{period}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+        {/* Education */}
 
-      <hr className="m-0" />
+        <section
+          className="resume-section p-3 p-lg-5 d-flex align-items-center"
+          id="education"
+        >
+          <div className="w-100">
+            <h2 className="mb-5">Education</h2>
+            <div className="pl-3 pl-lg-5 resume-item-wrapper timeline">
 
-      <section
-        className="resume-section p-3 p-lg-5 d-flex align-items-center"
-        id="education"
-      >
-        <div className="w-100">
-          <h2 className="mb-5">Education</h2>
-
-          {config.educationList.map((education) => {
-            const {
-              institution,
-              qualification,
-              description,
-              period,
-            } = education;
-            return (
-              <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div className="resume-content">
-                  <h3 className="mb-0">{institution}</h3>
-                  <div className="subheading mb-3">{qualification}</div>
-                  <div>{description}</div>
-                </div>
-                <div className="resume-date text-md-right">
-                  <span className="text-primary">{period}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      <hr className="m-0" />
-
-      <section
-        className="resume-section p-3 p-lg-5 d-flex align-items-center"
-        id="skills"
-      >
-        <div className="w-100">
-          <h2 className="mb-5">Skills</h2>
-
-          <div className="subheading mb-3">
-            Programming Languages &amp; Tools
+              <div className="align-fix"></div>
+              {education.map((item, key) => (
+                <>
+                  <ResumeItem
+                    key={key}
+                    {...item.node.frontmatter}>
+                    <div dangerouslySetInnerHTML={{ __html: item.node.html }} />
+                  </ResumeItem>
+                </>))
+              }
+            </div>
           </div>
-          <ul className="list-inline dev-icons">
-            {config.langTools.map((education) => {
-              const { iconClass } = education;
-              return (
-                <li className="list-inline-item">
-                  <i className={`fab ${iconClass}`}></i>
-                </li>
-              );
-            })}
-          </ul>
+        </section>
 
-          <div className="subheading mb-3">Other skills</div>
-          <ul className="fa-ul mb-0">
-            {config.skills.map((skill) => {
-              return (
-                <li>
-                  <i className="fa-li fa fa-check"></i>
-                  {skill}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
+        <hr className="m-0" />
 
-      <hr className="m-0" />
+        <section
+          className="resume-section p-3 p-lg-5 d-flex align-items-center"
+          id="skills"
+        >
+          <div className="w-100">
+            <h2 className="mb-5">Compétences</h2>
 
-      <section
-        className="resume-section p-3 p-lg-5 d-flex align-items-center"
-        id="portfolio"
-      >
-        <div className="w-100">
-          <h2 className="mb-5">Portfolio</h2>
-          {config.portfolio.introParagraphs.map((paragraph) => {
-            return <p>{paragraph}</p>;
-          })}
+            <h3 className="subheading mb-3">
+              Compétences métier
+            </h3>
 
-          <div className="mb-5"></div>
+            {config.businessSkills.map((skill, key) => <LineChart key={key} title={skill.name} percentage={skill.percentage} className="business-skills" />)}
 
-          {config.portfolio.items.map((item) => {
-            const { name, description, url } = item;
-            return (
-              <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div className="resume-content">
-                  <div className="subheading mb-3">{name}</div>
-                  <div>{description}</div>
-                </div>
-                <div className="resume-date text-md-right">
-                  <span className="text-primary portfolio-icons">
-                    <a key={url} href={url}>
-                      <i className={`fab fa-git-alt`}></i>
+            <h3 className="subheading mt-4 mb-3">
+              Compétences sectorielles
+            </h3>
+
+            {config.sectorSkills.map((skill, key) => <LineChart key={key} title={skill.name} percentage={skill.percentage} className="sector-skills" />)}
+
+            <h3 className="subheading mt-4 mb-3">
+              Compétences techniques
+            </h3>
+
+            <div className="dev-icons" >
+              {config.technicalSkills.map((skill, key) => (
+                <LineChart
+                  key={key}
+                  title={<><i className={`fab ${skill.iconClass}`}></i> {skill.name}</>}
+                  percentage={skill.percentage}
+                  className="technical-skills"
+                />))}
+            </div>
+
+            <p className="mt-4">Je travaille principalement avec les technologies suivantes :</p>
+            <ul>
+
+              {
+                Object.keys(config.toolsFrameworks).map((category, key) => (
+                  <li key={key}>{category} : {config.toolsFrameworks[category].join(", ")}</li>
+                )
+                )
+              }
+            </ul>
+
+
+
+
+          </div>
+        </section>
+
+        <hr className="m-0" />
+
+        <section
+          className="resume-section p-3 p-lg-5 d-flex align-items-center"
+          id="certifications"
+          style={{ minHeight: "50vh" }}
+        >
+          <div className="w-100">
+            <h2 className="mb-5">Certifications</h2>
+            <ul className="fa-ul mb-0">
+              {config.certifications.map((certification, key) => {
+                return (
+                  <li key={key} className="w-50 p-2 pr-4 d-inline-block">
+                    <a href={certification.url} rel="nofollow" title={certification.name}>
+                      <i className="fa-li fa fa-award text-warning"></i>
+                      {certification.name}
                     </a>
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
 
-      <hr className="m-0" />
+        <hr className="m-0" />
 
-      <section
-        className="resume-section p-3 p-lg-5 d-flex align-items-center"
-        id="certifications"
-      >
-        <div className="w-100">
-          <h2 className="mb-5">Certifications & Awards</h2>
-          <ul className="fa-ul mb-0">
-            {config.certifications.map((certification) => {
-              return (
-                <li>
-                  <i className="fa-li fa fa-award text-warning"></i>
-                  {certification}
-                </li>
-              );
+        <section
+          className="resume-section p-3 p-lg-5 d-flex align-items-center"
+          id="portfolio"
+        >
+          <div className="w-100">
+            <h2 className="mb-5">Missions et projets</h2>
+            {config.portfolio.introParagraphs.map((paragraph, key) => {
+              return <p key={key}>{paragraph}</p>;
             })}
-          </ul>
-        </div>
-      </section>
-    </div>
-    <div className="container w-100">
-      <p className="text-center">
-        <small className="d-lg-none d-xl-none">
-          Generated with the{' '}
-          <a href={`${config.footerUrl}`} className="">
-            Ops Platform
-          </a>
-        </small>
-      </p>
-    </div>
-  </Layout>
-);
+
+            <div className="mb-5"></div>
+
+            <div className="pl-lg-3 resume-item-wrapper">
+
+              {portfolio.map((project, key) => (
+                <>
+                  <PortfolioItem
+                    key={key}
+                    {...project.node.frontmatter}>
+                    <div dangerouslySetInnerHTML={{ __html: project.node.html }} />
+                  </PortfolioItem>
+                  <hr />
+                </>))
+              }
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+    </Layout >
+  );
+}
 
 export default IndexPage;
+
+
+
+export const query = graphql`
+
+  fragment MarkdownContent on MarkdownRemarkConnection {
+    edges {
+      node {
+        id
+        frontmatter {
+          name
+          title
+          company
+          url
+          url_project
+          position
+          start_date
+          end_date
+          location
+          flag_id
+          lang
+          categories
+        }
+        html
+      }
+    }
+  }
+
+
+	query HomepageQuery {
+		experiences: allMarkdownRemark(sort: {order: DESC, fields: frontmatter___end_date}, filter: {fileAbsolutePath: {regex: "/experiences/"}}) {
+      ...MarkdownContent
+    }
+    
+    education:allMarkdownRemark(sort: { order: DESC, fields: frontmatter___end_date }, filter: {fileAbsolutePath: {regex: "/education/"}}) {
+			...MarkdownContent
+    }
+    
+    portfolio:allMarkdownRemark(sort: { order: DESC, fields: frontmatter___end_date }, filter: {fileAbsolutePath: {regex: "/projects/"}}) {
+			...MarkdownContent
+		}
+	}
+`;
+

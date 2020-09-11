@@ -1,10 +1,26 @@
-.bg-primary {
+.bg-primary, .btn-primary {
   background-color: $primary !important;
 }
+
+.btn-teal {
+  background: linear-gradient(to right,#018C67,#0DCA98);
+  color:#fff !important;
+  transition:all 0.2s;
+
+  &:hover {
+    padding-left:2rem!important;
+  };
+}
+
+.bg-green {
+  background-color:$green-200;
+}
+
 
 .text-primary {
   color: $primary !important;
 }
+
 
 a {
   color: $primary;

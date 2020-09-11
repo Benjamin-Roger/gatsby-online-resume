@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
+
 import { StaticQuery, graphql } from 'gatsby';
+
+import SEO from "./SEO";
 
 import '../assets/sass/resume.scss';
 
@@ -15,21 +17,14 @@ class Layout extends Component {
             site {
               siteMetadata {
                 title
+                defaultLanguage
               }
             }
           }
         `}
         render={(data) => (
           <>
-            <Helmet
-              title={data.site.siteMetadata.title}
-              meta={[
-                { name: 'description', content: 'Resume' },
-                { name: 'keywords', content: 'site, web' },
-              ]}
-            >
-              <html lang="en" />
-            </Helmet>
+            <SEO title={this.props.title} />
             <div className={'main-body'}>{children}</div>
           </>
         )}

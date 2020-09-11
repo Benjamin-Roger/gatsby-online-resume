@@ -1,96 +1,130 @@
 const REPOSITORY = '';
-const FIRST_NAME = 'Jane';
-const LAST_NAME = 'Doe';
-const GITHUB_USERNAME = 'ctoai-demo';
-const TWITTER_USERNAME = 'janedoe';
-const LINKEDIN_USERNAME = 'janedoe';
-const PHONE_NUMBER = '604-XXX-XXXX';
-const ADDRESS = 'Vancouver';
-const EMAIL = 'jane.doe@email.com';
-const FOOTER_URL = 'https://www.cto.ai';
+const FIRST_NAME = 'Benjamin';
+const LAST_NAME = 'Roger';
+const GITHUB_USERNAME = 'Benjamin-Roger';
+const TWITTER_USERNAME = 'BenjRoger';
+const WHATSAPP_HANDLE = '33658351332';
+const LINKEDIN_USERNAME = 'b-roger';
+const OFFICIAL_WEBSITE = 'https://www.sapiowork.com/'
+const PHONE_NUMBER = '+33 6 58 35 13 32';
+const ADDRESS = 'Paris, FRANCE';
+const EMAIL = 'benjamin.roger@sapiowork.com';
+const FOOTER_URL = 'https://resume.benjaminroger.com';
 
-const BIO = `
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt anim id est laborum.`;
-
-const EXPERIENCE_LIST = [
-  {
-    title: 'Title 1',
-    company: 'Company 1',
-    description: `
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt anim id est laborum.`,
-    period: 'January 2019 - present',
-  },
-  {
-    title: 'Title 2',
-    company: 'Company 2',
-    description: `
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt anim id est laborum.`,
-    period: 'April 2018 - January 2019',
-  },
-  {
-    title: 'Title 3',
-    company: 'Company 3',
-    description: `
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt anim id est laborum.`,
-    period: 'December 2015 - April 2018',
-  },
+const MENU = [
+  { content: 'Contact', href: 'about' },
+  { content: 'Expériences', href: 'experience' },
+  { content: 'Éducation', href: 'education' },
+  { content: 'Compétences', href: 'skills' },
+  { content: 'Certifications', href: 'certifications' },
+  { content: 'Missions et projets', href: 'portfolio' }
 ];
 
-const EDUCATION_LIST = [
+const BIO = `<p>Consultant SI et développeur, je suis spécialisé dans les projets Web. J'accompagne également des projets en tant que consultant MOA/AMOA.</p>
+<p>Mes compétences techniques sont accompagnés d'une vraie expérience métier, issue de 8 ans dans le conseil. Je comprends l'enjeu de créer des solutions qui répondent à des besoins métier concrets, sans jargon technique !</p>
+<ul>
+  <li>Expérience multi-secteurs : assurance, sécurité sociale, maritime, gestion portuaire, agrobusiness.</li>
+  <li>Missions de conseil : stratégie IT, audit IT, optimisation de processus métier.</li>
+  <li>Technologies principales : React, Next.js, Node.js, Wordpress et Wagtail.</li>
+  <li>A vécu et travaillé en : Côte d'Ivoire, Bénin, Chine, France, Vietnam.</li>
+</ul>`;
+
+
+
+const BUSINESS_SKILLS = [{
+  name: "Français",
+  percentage: "100"
+},{
+  name: "Anglais",
+  percentage: "100"
+},{
+  name: "Business Analysis",
+  percentage: "95"
+},
+{
+  name: "Stratégie SI",
+  percentage: "90"
+},
+{
+  name: "Transformation Digitale",
+  percentage: "90"
+},
+{
+  name: "Gestion de projet",
+  percentage: "80"
+}, {
+  name: "Gestion de budget",
+  percentage: "80"
+}, {
+  name: "Gestion d'équipe",
+  percentage: "80"
+}];
+
+const SECTOR_SKILLS = [{
+  name: "Prévoyance Sociale",
+  percentage: "75"
+},
+{
+  name: "Assurance",
+  percentage: "75"
+},
+{
+  name: "Gestion portuaire | Transport maritime",
+  percentage: "80"
+}];
+
+
+const TECHNICAL_SKILLS = [
   {
-    institution: 'Institution 1',
-    qualification: 'Qualification 1',
-    description: `
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-    period: '2015',
+    name: 'Javascript',
+    iconClass: 'fa-js-square',
+    percentage: 80
   },
   {
-    institution: 'Institution 2',
-    qualification: 'Qualification 2',
-    description: `
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-    period: '2012',
+    name: 'PHP', iconClass: ' fa-php',
+    percentage: 80
   },
+  {
+    name: 'Python', iconClass: ' fa-python',
+    percentage: 70
+  },
+  {
+    name: 'React', iconClass: 'fa-react',
+    percentage: 80
+  },
+  {
+    name: 'SASS', iconClass: 'fa-sass',
+    percentage: 95
+  },
+  {
+    name: 'Wordpress', iconClass: 'fa-wordpress',
+    percentage: 95
+  }
 ];
 
-const LANGUAGES_AND_TOOLS = [
-  { name: 'HTML5', iconClass: 'fa-html5' },
-  { name: 'CSS3', iconClass: 'fa-css3-alt' },
-  { name: 'Javascript', iconClass: 'fa-js-square' },
-  { name: 'Angular', iconClass: 'fa-angular' },
-  { name: 'React', iconClass: 'fa-react' },
-  { name: 'NodeJS', iconClass: 'fa-node-js' },
-  { name: 'SASS', iconClass: 'fa-sass' },
-  { name: 'LESS', iconClass: 'fa-less' },
-  { name: 'Wordpress', iconClass: 'fa-wordpress' },
-  { name: 'Gulp', iconClass: 'fa-gulp' },
-  { name: 'Grunt', iconClass: 'fa-grunt' },
-  { name: 'NPM', iconClass: 'fa-npm' },
-  { name: 'R', iconClass: 'fa-r-project' },
-];
+const TOOLS_AND_FRAMEWORKS = {
+  "Front-end": [
+    "React", "Gatsby", "Next.js"
+  ],
+  "Back-end": [
+    "Node/Express.js", "Laravel (en cours d'apprentissage)"
+  ],
+  "CMS": [
+    "Wordpress",
+    "Prismic"
+  ],
+  "Webserver": [
+    "Apache"
+  ]
+};
 
-const SKILLS = ['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4', 'Skill 5'];
+
+const SKILLS = ['Prévoyance Sociale', 'Assurance', 'Banque', 'Portuaire', 'Maritime'];
 
 const PORTFOLIO = {
   introParagraphs: [
-    `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-    `Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt anim id est laborum.`,
+    `Ma double carrière m'a permis de vivre à la fois du côté de la MOE que de l'AMOA. J'ai accompagné plusieurs projets institutionnels en tant que consultants en Europe et Afrique de l'Ouest.`,
+    `Egalement, j'ai développé moi-même sites et applications Web en adéquation avec les besoins des mes clients.`,
   ],
   items: [
     {
@@ -109,11 +143,35 @@ const PORTFOLIO = {
 };
 
 const CERTIFICATIONS = [
-  'Certification 1',
-  'Certification 2',
-  'Certification 3',
-  'Award 1',
-  'Award 2',
+  {
+    name: 'SCRUM PSM-1 - 2016',
+    url: "https://www.scrum.org/certificates/144205"
+  },
+  {
+    name: 'Certification Wordpress SkillValue - 2020',
+    url: "https://skillvalue.com/fr/certificate/3B2wX3YtltfJ1rlmfYUGH0MnO9jMKbZb4QvsisaFf8uAcsXgsnZGxUw0hpdx"
+  },
+  {
+    name: 'Certification React SkillValue - 2020',
+    url: "https://skillvalue.com/fr/certificate/Nyk0KbypjAvBKvoGMotoCP05EEqfaOoIouf125M2tEbhE3tvrz1FqzlPYbZ3"
+  },
+  {
+    name: 'Certification Next.js SkillValue - 2020',
+    url: "https://skillvalue.com/fr/certificate/hRpAoCmxYocFi6JNfnBdGkdwPmASgLJNXCYUSjuLcIi3Nse7wn12scDGfRyF"
+  },
+  {
+    name: 'Certification Node.js SkillValue - 2020',
+    url: "https://skillvalue.com/fr/certificate/g92pFMpB6NRNi1Ujq0kJNS7AZ2Vmg5xzfcAk9S3wmUSG4Ee1kvp9lfIIl7Gr"
+  },
+  {
+    name: 'Certification SEO SkillValue - 2020',
+    url: "https://skillvalue.com/fr/certificate/j5aDHwybYe4bBd7eKlZYcXsvvj30BTI7QHsgdctxWL0sRXTx7HqN1CpjNMTG"
+  },
+  {
+    name: 'Certification Advanced Google Analytics - 2020',
+    url: "https://analytics.google.com/analytics/academy/certificate/Li1y06D6Q0e2GIRQKO6gZA"
+  },
+  
 ];
 
 module.exports = {
@@ -121,23 +179,24 @@ module.exports = {
   manifestName: `${FIRST_NAME} ${LAST_NAME} Resume`,
   manifestShortName: 'Resume', // max 12 characters
   manifestStartUrl: '/',
-  manifestBackgroundColor: '#663399',
-  manifestThemeColor: '#663399',
+  manifestBackgroundColor: '#28407f',
+  manifestThemeColor: '#28407f',
   manifestDisplay: 'standalone',
-  manifestIcon: 'src/assets/images/cto-ai.png',
-  pathPrefix: `/${REPOSITORY}`, // This path is subpath of your hosting https://domain/portfolio
+  manifestIcon: 'src/assets/images/favicon.png',
+  pathPrefix: `/${REPOSITORY}`,
+  menu: MENU,
   firstName: FIRST_NAME,
   lastName: LAST_NAME,
+  fullName: `${FIRST_NAME} ${LAST_NAME}`,
   // bio
   bio: BIO,
-  // experience
-  experienceList: EXPERIENCE_LIST,
-  // education
-  educationList: EDUCATION_LIST,
-  // languages & tools
-  langTools: LANGUAGES_AND_TOOLS,
   // skills
   skills: SKILLS,
+  businessSkills: BUSINESS_SKILLS,
+  sectorSkills: SECTOR_SKILLS,
+  technicalSkills: TECHNICAL_SKILLS,
+  // tools & frameworks
+  toolsFrameworks: TOOLS_AND_FRAMEWORKS,
   // certifications
   certifications: CERTIFICATIONS,
   // portfolio
@@ -159,9 +218,26 @@ module.exports = {
       name: 'Twitter',
       url: `https://twitter.com/${TWITTER_USERNAME}`,
     },
+    {
+      icon: 'fa-whatsapp',
+      name: 'Whatsapp',
+      url: `https://wa.me/${WHATSAPP_HANDLE}`,
+    },
+    {
+      icon: 'fas fa-globe-europe',
+      name: 'Website de freelance',
+      url: `${OFFICIAL_WEBSITE}`,
+    },
   ],
   email: EMAIL,
   phone: PHONE_NUMBER,
   address: ADDRESS,
   footerUrl: FOOTER_URL,
+  freelanceSite: {
+    url: OFFICIAL_WEBSITE,
+    title: "Visitez mon site de développeur freelance en cliquant ici !"
+  },
+  credits: [
+    `Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>`
+  ]
 };

@@ -1,9 +1,17 @@
 const config = require('./config');
 
+const path = require(`path`)
+
+
 module.exports = {
   pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: config.siteTitle,
+    defaultLanguage: "fr",
+    author: config.fullName,
+    description: "CV en ligne de Benjamin Roger, consultant IT et développeur Web",
+    keywords: "Benjamin ROGER CV Resume web gatsby next.js node.js react freelance",
+    siteUrl: "https://resume.benjaminroger.com/"
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -21,5 +29,34 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`,`assets`,`images`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/data/markdown`,
+      },
+    },
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-139596449-1",
+        head: false,
+        anonymize: true,
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 0,
+        defer: false
+      },
+    }
+
   ],
 };

@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'gatsby';
+
 
 import Layout from '../components/Layout';
 
@@ -9,12 +11,13 @@ const IndexPage = () => (
         className="resume-section p-3 p-lg-5 d-flex align-items-center"
         id="about"
       >
-        <header className="major">
+        <header className="major text-center">
           <h2>
-            Page not found
+            Erreur 404
             <br />
-            Not a valid URL
+            Cette page n'existe pas.
           </h2>
+          <Link href="/">Retourner à la page d'accueil.</Link>
         </header>
       </section>
     </div>

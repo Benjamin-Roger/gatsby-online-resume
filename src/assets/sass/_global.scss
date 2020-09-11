@@ -3,7 +3,7 @@
 body {
   @include body-font;
   padding-top: 54px;
-  color: $gray-600;
+  color: $gray-700;
 }
 @media (min-width: 992px) {
   body {
@@ -19,26 +19,63 @@ h4,
 h5,
 h6 {
   @include heading-font;
-  font-weight: 700;
   text-transform: uppercase;
   color: $gray-800;
 }
 
+h5,
+h6 {
+  font-weight: bold;
+  text-transform: unset;
+}
+
 h1 {
-  font-size: 6rem;
-  line-height: 5.5rem;
+  font-size: 35px;
+  line-height: 30px;
+  
+  @media (min-width:700px) {
+    font-size:6rem;
+    line-height:5.5rem;
+  }
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  
+  @media (min-width:700px) {
+    font-size:3.5rem;
+  }
 }
 
 h3 {
   font-size: 2rem;
 }
 
-p.lead {
-  font-size: 1.15rem;
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+p ~ ul {
+  list-style: none;
+
+  li::before {
+    content: "\2022";
+    color: $primary;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+}
+
+p,
+li,
+a {
+  font-size: 1.05rem;
   font-weight: 400;
 }
 
@@ -49,18 +86,23 @@ p.lead {
   font-size: 1.5rem;
 }
 
+
+
 .social-icons {
   a {
-    display: inline-block;
+    display: inline-flex;
     height: 3.5rem;
     width: 3.5rem;
     background-color: $gray-700;
     color: $white !important;
     border-radius: 100%;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     font-size: 1.5rem;
     line-height: 4rem;
     margin-right: 1rem;
+    text-decoration: none;
+
     &:last-child {
       margin-right: 0;
     }
@@ -70,32 +112,24 @@ p.lead {
   }
 }
 
-.portfolio-icons {
-  a {
-    display: inline-block;
-    height: 2rem;
-    width: 2rem;
-    background-color: $gray-700;
-    color: $white !important;
-    border-radius: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    margin-right: 1rem;
-    &:last-child {
-      margin-right: 0;
-    }
-    &:hover {
-      background-color: $primary;
-    }
+#skills {
+  .business-skills {
+    background: linear-gradient(to right, $primary, $teal);
   }
-}
 
-.dev-icons {
-  font-size: 3rem;
-  .list-inline-item i {
-    &:hover {
-      color: $primary;
+  .sector-skills {
+    background: linear-gradient(to right, $contrast, $contrast-lower);
+  }
+
+  .technical-skills {
+    background: linear-gradient(to right, $green, $green-200);
+  }
+
+  .progress-wrapper {
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      width: 50%;
     }
   }
 }

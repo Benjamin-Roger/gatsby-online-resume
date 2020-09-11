@@ -1,6 +1,8 @@
 #sideNav {
+  top:0px;
+
   .navbar-nav .nav-item .nav-link {
-    font-weight: 800;
+    font-weight: bold;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
   }
@@ -8,6 +10,15 @@
     &:focus {
       outline-color: lighten($primary, 15%);
     }
+  }
+
+  .particles-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height:100%;
+    z-index:-1;
   }
 }
 
@@ -23,11 +34,13 @@
 
     width: $sidebar-base-width;
     height: 100vh;
+
     .navbar-brand {
       display: flex;
 
       margin: auto auto 0;
       padding: 0.5rem;
+
       .img-profile {
         max-width: 10rem;
         max-height: 10rem;

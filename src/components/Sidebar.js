@@ -2,67 +2,137 @@ import React, { Component } from 'react';
 import Scrollspy from 'react-scrollspy';
 import Scroll from './Scroll';
 
-import avatar from '../assets/images/cto-ai.png';
+import Particles from 'react-particles-js';
+
+
+import avatar from '../assets/images/CV_white.png';
 import config from '../../config';
 
 export class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tabs: [
-        { content: 'About', href: 'about' },
-        { content: 'Experience', href: 'experience' },
-        { content: 'Education', href: 'education' },
-        { content: 'Skills', href: 'skills' },
-        { content: 'Portfolio', href: 'portfolio' },
-        { content: 'Certifications', href: 'certifications' },
-      ],
+      tabs: config.menu,
+      open: false
     };
+
+    this.toggleNav = this.toggleNav.bind(this);
   }
+
+  toggleNav(e) {
+    e.preventDefault();
+
+    this.setState({
+      open: !this.state.open
+    })
+
+
+  }
+
 
   render() {
     const { tabs } = this.state;
+
+    var particleParams = {
+      "particles": {
+        "number": {
+          "value": 100,
+          "density": {
+            "enable": true,
+            "value_area": 1500
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "opacity": 0.2
+        },
+        "move": {
+          "direction": "right",
+          "speed": 0.5
+        },
+        "size": {
+          "value": 1
+        },
+        "opacity": {
+          "anim": {
+            "enable": true,
+            "speed": .5,
+            "opacity_min": 0.4
+          }
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "onhover": {
+            "enable": true,
+            "mode": "bubble"
+          }
+        },
+        "modes": {
+          "push": {
+            "particles_nb": 2
+          },
+          "bubble": {
+            "size": 3,
+            "distance": 40
+          }
+        }
+      },
+      "retina_detect": true
+    };
+
     return (
       <nav
         className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
         id="sideNav"
       >
+        <Particles
+          params={particleParams}
+          className="particles-wrapper"
+          reRender={this.state.open}
+        />
+
+
         <a className="navbar-brand" href="#page-top">
           <span className="d-block d-lg-none">
             {config.firstName} {config.lastName}
           </span>
+
+
           <span className="d-none d-lg-block">
             <img
-              className="img-fluid img-profile rounded-circle mx-auto mb-2"
+              className="img-fluid mx-auto mb-2 p-4"
               src={avatar}
               alt=""
             />
+
           </span>
         </a>
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={this.toggleNav}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className={`navbar-collapse ` + (!this.state.open ? "collapse" : "")} id="navbarSupportedContent">
           <Scrollspy
-            items={tabs.map((s) => s.href)}
+            items={tabs.map((tab) => tab.href)}
             currentClassName="active"
             offset={-300}
             className="navbar-nav"
           >
-            {tabs.map((tab, i) => {
+            {tabs.map((tab, key) => {
               const { href, content } = tab;
               return (
-                <li className="nav-item" key={href}>
-                  <Scroll type="id" element={href}>
-                    <a className="nav-link" href={`#${href}`}>
+                <li className="nav-item" key={key}  onClick={this.toggleNav}>
+                  <Scroll type="id" element={href} >
+                    <a className="nav-link" href={`#${href}`} >
                       {content}
                     </a>
                   </Scroll>
@@ -71,15 +141,7 @@ export class Sidebar extends Component {
             })}
           </Scrollspy>
         </div>
-        <small className="d-none d-lg-block text-white">
-          Generated with the{' '}
-          <a
-            href={`${config.footerUrl}`}
-            className="text-light sidebar-footer-link"
-          >
-            Ops Platform
-          </a>
-        </small>
+
       </nav>
     );
   }
