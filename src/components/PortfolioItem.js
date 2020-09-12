@@ -5,8 +5,16 @@ import countriesName from '../utils/countriesName';
 
 
 const PortfolioItem = ({ name, company, url, url_project, categories, start_date, end_date, flag_id, children }) => (
-    <div className={"resume-item portfolio-item d-flex flex-column flex-md-row justify-content-between mt-5 p-3 shadow-sm rounded " + (categories.includes("Consulting") ? "consulting" : "")}>
-        <div className="resume-content">
+    <div className={"resume-item portfolio-item mt-5 p-3 shadow-sm rounded " + (categories.includes("Consulting") ? "consulting" : "")}>
+        <div className="resume-date text-right float-right">
+            <p className="text-primary">{(start_date !== end_date) ? (start_date + ' - ' + end_date) : start_date}</p>
+            {
+                flag_id ? flag_id.map((flag, key) => <img className="flag-icons ml-2 mb-2 shadow-sm rounded-circle" key={key} src={`/images/${flag}.svg`} title={countriesName[flag]} alt={countriesName[flag]} />) : ''
+            }
+
+        </div>
+
+        <div className="resume-content pb-5 position-relative">
             <h4 className="mb-0">{name}</h4>
             <div className="mb-3 mt-1 d-flex">
                 <h5 className="mr-2">
@@ -17,7 +25,7 @@ const PortfolioItem = ({ name, company, url, url_project, categories, start_date
                 <span> {categories ? (categories.map(category => (
                     <span
                         key={category}
-                        className={"small rounded text-white p-1 m-1 pr-3 pl-3 " + (category === "Consulting" ? "bg-primary" : "bg-green")}
+                        className={"small rounded text-white p-1 m-1 pr-3 pl-3 d-inline-block " + (category === "Consulting" ? "bg-primary" : "bg-green")}
                     >
                         {category}
                     </span>))) : ''}
@@ -26,14 +34,6 @@ const PortfolioItem = ({ name, company, url, url_project, categories, start_date
 
             {children}
 
-
-
-        </div>
-        <div className="resume-date text-md-right position-relative">
-            <p className="text-primary">{(start_date !== end_date) ? (start_date + ' - ' + end_date) : start_date}</p>
-            {
-                flag_id ? flag_id.map((flag, key) => <img className="flag-icons ml-2 mb-2 shadow-sm rounded-circle" key={key} src={`/images/${flag}.svg`} title={countriesName[flag]} alt={countriesName[flag]} />) : ''
-            }
 
             <br />
 
@@ -49,7 +49,11 @@ const PortfolioItem = ({ name, company, url, url_project, categories, start_date
                     </a>
                 </p>
             ) : ''}
+
+
+
         </div>
+
 
 
     </div>
