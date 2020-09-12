@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import config from "../../config"
 
 function SEO({
   description,
@@ -9,6 +10,7 @@ function SEO({
   image: metaImage_org,
   title,
   pathname,
+  lang
 }) {
   // Get the data for SEO
   const data = useStaticQuery(
@@ -50,6 +52,8 @@ function SEO({
 
       title={title}
       titleTemplate={`%s | ${SEOData.title}`}
+
+      lang={lang ||SEOData.defaultLanguage }
 
       link={
         canonical
