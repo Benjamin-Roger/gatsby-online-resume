@@ -95,9 +95,6 @@ a {
   font-size: 1.5rem;
 }
 
-.no-breakline {
-  line-break: none;
-}
 
 .social-icons {
   a {
@@ -141,6 +138,19 @@ a {
 
     @media screen and (min-width: 768px) {
       width: 50%;
+    }
+  }
+}
+
+#portfolio {
+  .portfolio-controls {
+    position:sticky;
+    top:54px;
+    z-index:2;
+    background:#fff;
+
+    @media (min-width:542px) {
+      position:initial;
     }
   }
 }

@@ -9,6 +9,7 @@ import Sidebar from '../components/Sidebar';
 import LineChart from '../components/LineChart';
 
 import config from '../../config';
+import countriesName from '../utils/countriesName';
 
 const AboutSection = () => (
   <>
@@ -29,14 +30,12 @@ const AboutSection = () => (
         <div className="lead" dangerouslySetInnerHTML={{ __html: config.bio }} />
         <a className="mt-2 mb-5 btn btn-teal border-0 p-3 pl-4" href={config.freelanceSite.url} title={config.freelanceSite.title}>{config.freelanceSite.title}</a>
         <div className="social-icons">
-          {config.socialLinks.map((social, key) => {
-            const { icon, url } = social;
-            return (
-              <a key={key} href={url}>
-                <i className={`fab ${icon}`}></i>
-              </a>
-            );
-          })}
+          {config.socialLinks.map((social, key) => (
+            <a key={key} href={social.url}>
+              <i className={`fab ${social.icon}`}></i>
+            </a>
+          )
+          )}
         </div>
       </div>
     </section >
@@ -152,10 +151,10 @@ const CertificationSection = () => (
   >
     <div className="w-100">
       <h2 className="mb-5">Certifications</h2>
-      <ul className="fa-ul mb-0">
+      <ul className="fa-ul mb-0 d-flex flex-wrap">
         {config.certifications.map((certification, key) => {
           return (
-            <li key={key} className="w-50 p-2 pr-4 d-inline-block">
+            <li key={key} className="p-2 pr-4 col-12 col-sm-6">
               <a href={certification.url} rel="nofollow" title={certification.name}>
                 <i className="fa-li fa fa-award text-warning"></i>
                 {certification.name}
@@ -175,25 +174,68 @@ class PortfolioSection extends React.Component {
     super(props);
 
     this.state = {
-      portfolioCategory: "All"
+      portfolioCategory: "",
+      portfolioRegion: "",
+      portfolio: props.portfolio
     };
 
-    // this.handleCategoryFilter = this.handleCategoryFilter.bind(this);
+
+    this.updateCategoryFilter = this.updateCategoryFilter.bind(this);
+    this.updateRegionFilter = this.updateRegionFilter.bind(this);
+
 
   }
 
-  handleCategoryFilter(e) {
+  updateCategoryFilter(e) {
     e.preventDefault();
 
-    
+    this.setState({
+      portfolioCategory: e.target.value
+    })
+
   }
+
+  updateRegionFilter(e) {
+    e.preventDefault();
+
+    this.setState({
+      portfolioRegion: e.target.value
+    })
+
+
+  }
+
 
   render() {
 
-    const portfolio = this.props.portfolio;
 
-    const visible_portfolio = (this.state.portfolioCategory === "All") ? portfolio : portfolio.filter(project => project.node.frontmatter.categories.includes(this.state.portfolioCategory));
+    var visiblePortfolio = [...this.props.portfolio];
 
+    if (this.state.portfolioCategory) {
+
+      visiblePortfolio = visiblePortfolio.filter(project => project.node.frontmatter.categories.includes(this.state.portfolioCategory));
+    }
+
+    if (this.state.portfolioRegion) {
+
+      visiblePortfolio = visiblePortfolio.filter(project => project.node.frontmatter.flag_id.includes(this.state.portfolioRegion));
+    }
+
+    var portfolioList = '';
+
+    if (visiblePortfolio.length > 0) {
+      portfolioList = visiblePortfolio.map((project, key) => (
+        <>
+          <PortfolioItem
+            key={key}
+            {...project.node.frontmatter}>
+            <div dangerouslySetInnerHTML={{ __html: project.node.html }} />
+          </PortfolioItem>
+          <hr />
+        </>))
+    } else {
+      portfolioList = <p className="mt-4 text-center">Pas de projet de {this.state.portfolioCategory.toLowerCase()} dans ce pays pour le moment !</p>
+    }
 
     return (
 
@@ -205,36 +247,39 @@ class PortfolioSection extends React.Component {
           <h2 className="mb-5">Missions et projets</h2>
 
 
-          {config.portfolio.introParagraphs.map((paragraph, key) => {
-            return <p key={key}>{paragraph}</p>;
-          })}
+          {config.portfolio.introParagraphs.map((paragraph, key) => (<p key={`portfolio_intro_${key}`}>{paragraph}</p>))}
 
-          <div className="mb-5"></div>
 
-          <div className="pl-lg-3 resume-item-wrapper">
 
-            {
-              portfolio.filter(project => project.node.frontmatter.categories.includes("Consulting")).map((project, key) => (
-                <>
-                  <PortfolioItem
-                    key={key}
-                    {...project.node.frontmatter}>
-                    <div dangerouslySetInnerHTML={{ __html: project.node.html }} />
-                  </PortfolioItem>
-                  <hr />
-                </>))
-            }
+          <div className="mt-5 portfolio-controls d-flex flex-column flex-md-row" >
+            <select
+              className="category-select form-control flex-1 m-2 ml-0 ml-md-0 "
+              onChange={this.updateCategoryFilter}
+              value={this.state.portfolioCategory}
+            >
+              <option value="">Tous types de mission</option>
+              {config.portfolio.categories.map(type => <option key={type} value={type}>{type}</option>)}
 
-            {/* {portfolio.map((project, key) => (
-                <>
-                  <PortfolioItem
-                    key={key}
-                    {...project.node.frontmatter}>
-                    <div dangerouslySetInnerHTML={{ __html: project.node.html }} />
-                  </PortfolioItem>
-                  <hr />
-                </>))
-              } */}
+            </select>
+
+            <select
+              className="country-select form-control flex-1 m-2 ml-0 ml-md-2"
+              onChange={this.updateRegionFilter}
+              value={this.state.portfolioRegion}
+            >
+              <option value="">Tous pays</option>
+
+              {Object.keys(countriesName).map((flag_id, key) => (
+                <option key={flag_id} value={flag_id}>{countriesName[flag_id]}</option>
+              )
+              )}
+            </select>
+          </div>
+
+          <div className="resume-item-wrapper">
+
+            {portfolioList}
+
           </div>
         </div>
       </section>

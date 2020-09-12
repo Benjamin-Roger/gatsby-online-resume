@@ -126,20 +126,10 @@ const PORTFOLIO = {
     `Ma double carrière m'a permis de vivre à la fois du côté de la MOE que de l'AMOA. J'ai accompagné plusieurs projets institutionnels en tant que consultants en Europe et Afrique de l'Ouest.`,
     `Egalement, j'ai développé moi-même sites et applications Web en adéquation avec les besoins des mes clients.`,
   ],
-  items: [
-    {
-      name: 'First portfolio item',
-      description:
-        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-      url: 'https://github.com/user/repo',
-    },
-    {
-      name: 'Second portoflio item name',
-      description:
-        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-      url: 'https://github.com/user/repo',
-    },
-  ],
+  categories : [
+    "Consulting",
+    "Développement Web"
+  ]
 };
 
 const CERTIFICATIONS = [

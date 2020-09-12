@@ -4,7 +4,7 @@ import {Link} from 'gatsby';
 
 import Layout from '../components/Layout';
 
-const IndexPage = () => (
+const Error404Page = () => (
   <Layout>
     <div className="container-fluid p-0">
       <section
@@ -24,4 +24,4 @@ const IndexPage = () => (
   </Layout>
 );
 
-export default IndexPage;
+export default Error404Page;

@@ -9,14 +9,14 @@ const PortfolioItem = ({ name, company, url, url_project, categories, start_date
         <div className="resume-date text-right float-right">
             <p className="text-primary">{(start_date !== end_date) ? (start_date + ' - ' + end_date) : start_date}</p>
             {
-                flag_id ? flag_id.map((flag, key) => <img className="flag-icons ml-2 mb-2 shadow-sm rounded-circle" key={key} src={`/images/${flag}.svg`} title={countriesName[flag]} alt={countriesName[flag]} />) : ''
+                flag_id ? flag_id.map((flag, key) => <img className="flag-icons ml-2 mb-2 shadow-sm rounded-circle" key={`flag_${key}`} src={`/images/${flag}.svg`} title={countriesName[flag]} alt={countriesName[flag]} />) : ''
             }
 
         </div>
 
         <div className="resume-content pb-5 position-relative">
             <h4 className="mb-0">{name}</h4>
-            <div className="mb-3 mt-1 d-flex">
+            <div className="mb-3 mt-1 d-flex flex-column">
                 <h5 className="mr-2">
                     {
                         url ? (<a className="portfolio-link hover-link" href={url} title={company} alt={company} rel="nofollow">{company}</a>) : <span className="portfolio-link text-color-primary hover-link">{company}</span>
@@ -24,8 +24,8 @@ const PortfolioItem = ({ name, company, url, url_project, categories, start_date
                 </h5>
                 <span> {categories ? (categories.map(category => (
                     <span
-                        key={category}
-                        className={"small rounded text-white p-1 m-1 pr-3 pl-3 d-inline-block " + (category === "Consulting" ? "bg-primary" : "bg-green")}
+                        key={`${category}`}
+                        className={"small rounded text-white p-1 mt-1 mb-1 ml-0 mr-2 pr-3 pl-3 d-inline-block " + (category === "Consulting" ? "bg-primary" : "bg-green")}
                     >
                         {category}
                     </span>))) : ''}
