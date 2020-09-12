@@ -7,6 +7,7 @@ import ResumeItem from '../components/ResumeItem';
 import PortfolioItem from '../components/PortfolioItem';
 import Sidebar from '../components/Sidebar';
 import LineChart from '../components/LineChart';
+import ParticlesBackground from '../components/ParticlesBackground';
 
 import config from '../../config';
 import countriesName from '../utils/countriesName';
@@ -28,7 +29,16 @@ const AboutSection = () => (
           <span className="d-block d-md-inline">{config.address} ·</span> <span className="d-block d-md-inline">{config.phone}</span>
         </div>
         <div className="lead" dangerouslySetInnerHTML={{ __html: config.bio }} />
-        <a className="mt-2 mb-5 btn btn-teal border-0 p-3 pl-4" href={config.freelanceSite.url} title={config.freelanceSite.title}>{config.freelanceSite.title}</a>
+        <a className="mt-2 mb-5 btn btn-teal btn-grow border-0 p-3 pl-4 d-inline-block position-relative" href={config.freelanceSite.url} title={config.freelanceSite.title}>
+          {config.freelanceSite.title}
+          <ParticlesBackground />
+          </a>
+
+        <a className="mt-2 mb-5 ml-3 btn-grow btn text-white border-0 p-3 pl-4 d-inline-block position-relative" style={{backgroundColor:'black'}} href={config.gitHubRepo.url} title={config.gitHubRepo.title}>
+          <i className="fab fa-github mr-2"> </i>{config.gitHubRepo.title}
+          <ParticlesBackground />
+          </a>
+
         <div className="social-icons">
           {config.socialLinks.map((social, key) => (
             <a key={key} href={social.url}>

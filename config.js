@@ -10,6 +10,7 @@ const PHONE_NUMBER = '+33 6 58 35 13 32';
 const ADDRESS = 'Paris, FRANCE';
 const EMAIL = 'benjamin.roger@sapiowork.com';
 const FOOTER_URL = 'https://resume.benjaminroger.com';
+const GITHUB_REPO = 'https://github.com/Benjamin-Roger/Online_Resume'
 
 const MENU = [
   { content: 'Contact', href: 'about' },
@@ -194,7 +195,7 @@ module.exports = {
   // social
   socialLinks: [
     {
-      icon: 'fa-github',
+      icon: 'fa-github-alt',
       name: 'Github',
       url: `https://github.com/${GITHUB_USERNAME}`,
     },
@@ -226,6 +227,10 @@ module.exports = {
   freelanceSite: {
     url: OFFICIAL_WEBSITE,
     title: "Visitez mon site de développeur freelance en cliquant ici !"
+  },
+  gitHubRepo: {
+    url: GITHUB_REPO,
+    title: "Voir le code de ce site sur Github"
   },
   credits: [
     `Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>`
