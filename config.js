@@ -5,11 +5,12 @@ const GITHUB_USERNAME = 'Benjamin-Roger';
 const TWITTER_USERNAME = 'BenjRoger';
 const WHATSAPP_HANDLE = '33658351332';
 const LINKEDIN_USERNAME = 'b-roger';
-const OFFICIAL_WEBSITE = 'https://www.sapiowork.com/'
+const OFFICIAL_WEBSITE = 'https://www.sapiowork.com'
 const PHONE_NUMBER = '+33 6 58 35 13 32';
 const ADDRESS = 'Paris, FRANCE';
 const EMAIL = 'benjamin.roger@sapiowork.com';
-const FOOTER_URL = 'https://resume.benjaminroger.com';
+const SITE_URL= 'https://resume.benjaminroger.com'
+const FOOTER_URL = SITE_URL;
 const GITHUB_REPO = 'https://github.com/Benjamin-Roger/Online_Resume'
 
 const MENU = [
@@ -166,7 +167,7 @@ const CERTIFICATIONS = [
 ];
 
 module.exports = {
-  siteTitle: `${FIRST_NAME} ${LAST_NAME}`, // <title>
+  siteTitle: `${FIRST_NAME} ${LAST_NAME} | Consultant SI | Développeur Web`, // <title>
   manifestName: `${FIRST_NAME} ${LAST_NAME} | Online Resume`,
   manifestShortName: 'Resume', // max 12 characters
   manifestStartUrl: '/',
@@ -223,6 +224,7 @@ module.exports = {
   email: EMAIL,
   phone: PHONE_NUMBER,
   address: ADDRESS,
+  siteUrl : SITE_URL,
   footerUrl: FOOTER_URL,
   freelanceSite: {
     url: OFFICIAL_WEBSITE,

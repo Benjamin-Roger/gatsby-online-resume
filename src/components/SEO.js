@@ -38,11 +38,11 @@ function SEO({
     `
   )
 
-  const SEOData = data.SEO.siteMetadata;
+  const SEOData = data.SEO.siteMetadata;;
+  const metaDescription = description || SEOData.description;
+  const metaImage = metaImage_org || data.cv.fluid;
 
-  const metaDescription = description || SEOData.description
-
-  const metaImage = metaImage_org || data.cv.fluid
+  lang = lang || SEOData.defaultLanguage;
 
   const image =
     metaImage && metaImage.src ? `${SEOData.siteUrl}${metaImage.src}` : null
@@ -50,10 +50,12 @@ function SEO({
   return (
     <Helmet
 
+      htmlAttributes={{
+        lang:lang,
+      }}
+
       title={title}
       titleTemplate={`%s | ${SEOData.title}`}
-
-      lang={lang ||SEOData.defaultLanguage }
 
       link={
         canonical
@@ -102,6 +104,14 @@ function SEO({
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `twitter:site`,
+          content: SEOData.siteUrl,
+        },
+        {
+          name: `twitter:image`,
+          content: image,
+        }
       ]
         .concat(
           metaImage

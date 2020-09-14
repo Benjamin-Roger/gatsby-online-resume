@@ -9,9 +9,9 @@ module.exports = {
     title: config.siteTitle,
     defaultLanguage: "fr",
     author: config.fullName,
-    description: "CV en ligne de Benjamin Roger, consultant IT et développeur Web",
+    description: "CV en ligne de Benjamin Roger, consultant IT et développeur Web. Consultez-moi pour vos projets Web !",
     keywords: "Benjamin ROGER CV Resume web gatsby next.js node.js react freelance",
-    siteUrl: "https://resume.benjaminroger.com/"
+    siteUrl: config.siteUrl
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -56,7 +56,20 @@ module.exports = {
         pageTransitionDelay: 0,
         defer: false
       },
-    }
+    },
+
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: `config.siteUrl`,
+        sitemap: `${config.siteUrl}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+
+    `gatsby-plugin-sitemap`,
+
+
 
   ],
 };
