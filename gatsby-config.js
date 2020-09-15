@@ -67,8 +67,7 @@ module.exports = {
       }
     },
 
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-csp`
+    `gatsby-plugin-sitemap`
 
 
 
