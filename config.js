@@ -119,7 +119,7 @@ const TOOLS_AND_FRAMEWORKS = {
   "Webserver": [
     "Apache"
   ]  ,
-  "JAMstack": [
+  "Jamstack": [
     "Vercel","Netlify"
   ]
 };
