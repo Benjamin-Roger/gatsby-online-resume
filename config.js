@@ -72,7 +72,7 @@ const SECTOR_SKILLS = [{
 },
 {
   name: "Gestion portuaire | Transport maritime",
-  percentage: "80"
+  percentage: "75"
 }];
 
 
@@ -109,14 +109,18 @@ const TOOLS_AND_FRAMEWORKS = {
     "React", "Gatsby", "Next.js"
   ],
   "Back-end": [
-    "Node/Express.js", "Laravel (en cours d'apprentissage)"
+    "Node.js/Express.js", "Laravel (en cours d'apprentissage)"
   ],
   "CMS": [
     "Wordpress",
-    "Prismic"
+    "Prismic",
+    "Netlify-CMS"
   ],
   "Webserver": [
     "Apache"
+  ]  ,
+  "JAM Stack": [
+    "Vercel","Netlify"
   ]
 };
 
