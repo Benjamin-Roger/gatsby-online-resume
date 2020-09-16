@@ -142,7 +142,7 @@ const SkillSection = () => (
 
         {
           Object.keys(config.toolsFrameworks).map((category, key) => (
-            <li key={key}>{category} : {config.toolsFrameworks[category].join(", ")}</li>
+            <li key={key}><strong>{category} :</strong> {config.toolsFrameworks[category].join(", ")}</li>
           )
           )
         }
