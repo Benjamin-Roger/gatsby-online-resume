@@ -29,24 +29,23 @@ const AboutSection = () => (
           <span className="d-block d-md-inline">{config.address} ·</span> <span className="d-block d-md-inline">{config.phone}</span>
         </div>
         <div className="lead" dangerouslySetInnerHTML={{ __html: config.bio }} />
-        <a className="mt-2 btn btn-teal btn-grow border-0 p-3 d-block d-sm-inline-block position-relative" href={config.freelanceSite.url} title={config.freelanceSite.title}>
-          {config.freelanceSite.title}
-          <ParticlesBackground />
-          </a>
 
-        <a className="mt-2 ml-md-3 btn-grow btn text-white border-0 p-3 d-block d-sm-inline-block position-relative" style={{backgroundColor:'black'}} href={config.gitHubRepo.url} title={config.gitHubRepo.title}>
+
+        <a className="mt-2 btn-grow btn border-0 bg-primary text-white p-3 d-block d-sm-inline-block position-relative" href={config.resumeDownload.url} title={config.resumeDownload.title} download>
+          <i className="fa fa-download mr-2"> </i>{config.resumeDownload.title}
+          <ParticlesBackground />
+        </a>
+
+        <a className="mt-2 ml-md-3 btn-grow btn text-white border-0 p-3 d-block d-sm-inline-block position-relative" style={{ backgroundColor: 'black' }} href={config.gitHubRepo.url} title={config.gitHubRepo.title}>
           <i className="fab fa-github mr-2"> </i>{config.gitHubRepo.title}
           <ParticlesBackground />
-          </a>
+        </a>
 
-        <div className="social-icons mt-5">
-          {config.socialLinks.map((social, key) => (
-            <a key={key} href={social.url}>
-              <i className={`fab ${social.icon}`}></i>
-            </a>
-          )
-          )}
-        </div>
+        <a className="mt-2 ml-md-3 btn btn-teal btn-grow border-0 p-3 d-block d-sm-inline-block position-relative" href={config.freelanceSite.url} title={config.freelanceSite.title}>
+          <i className="fa fa-laptop mr-2"> </i>{config.freelanceSite.title}
+          <ParticlesBackground />
+        </a>
+
       </div>
     </section >
   </>

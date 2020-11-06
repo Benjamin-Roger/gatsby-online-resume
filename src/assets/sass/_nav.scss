@@ -23,14 +23,13 @@
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     width: $sidebar-base-width;
     height: 100vh;
 
     .navbar-brand {
       display: flex;
-
-      margin: auto auto 0;
       padding: 0.5rem;
 
       .img-profile {

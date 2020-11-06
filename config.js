@@ -232,7 +232,11 @@ module.exports = {
   footerUrl: FOOTER_URL,
   freelanceSite: {
     url: OFFICIAL_WEBSITE,
-    title: "Visitez mon site de développeur freelance en cliquant ici !"
+    title: "Voir mon site de développeur freelance"
+  },
+  resumeDownload: {
+    url: '/content/CV_ROGER-Benjamin.pdf',
+    title: "Télécharger mon CV"
   },
   gitHubRepo: {
     url: GITHUB_REPO,
