@@ -5,13 +5,13 @@ const GITHUB_USERNAME = 'Benjamin-Roger';
 const TWITTER_USERNAME = 'BenjRoger';
 const WHATSAPP_HANDLE = '33658351332';
 const LINKEDIN_USERNAME = 'b-roger';
-const OFFICIAL_WEBSITE = 'https://www.sapiowork.com'
+const OFFICIAL_WEBSITE = 'https://www.sapiowork.com';
 const PHONE_NUMBER = '+33 6 58 35 13 32';
 const ADDRESS = 'Paris, FRANCE';
 const EMAIL = 'benjamin.roger@sapiowork.com';
-const SITE_URL= 'https://resume.benjaminroger.com'
+const SITE_URL = 'https://resume.benjaminroger.com';
 const FOOTER_URL = SITE_URL;
-const GITHUB_REPO = 'https://github.com/Benjamin-Roger/Online_Resume'
+const GITHUB_REPO = 'https://github.com/Benjamin-Roger/Online_Resume';
 
 const MENU = [
   { content: 'Contact', href: 'about' },
@@ -19,7 +19,7 @@ const MENU = [
   { content: 'Éducation', href: 'education' },
   { content: 'Compétences', href: 'skills' },
   { content: 'Certifications', href: 'certifications' },
-  { content: 'Missions et projets', href: 'portfolio' }
+  { content: 'Missions et projets', href: 'portfolio' },
 ];
 
 const BIO = `<p>Consultant SI et développeur, je suis spécialisé dans les projets Web. J'accompagne également des projets en tant que consultant MOA/AMOA.</p>
@@ -31,143 +31,149 @@ const BIO = `<p>Consultant SI et développeur, je suis spécialisé dans les pro
   <li>A vécu et travaillé en : Côte d'Ivoire, Bénin, Chine, France, Vietnam.</li>
 </ul>`;
 
+const BUSINESS_SKILLS = [
+  {
+    name: 'Français',
+    percentage: '100',
+  },
+  {
+    name: 'Anglais',
+    percentage: '100',
+  },
+  {
+    name: 'Business Analysis',
+    percentage: '95',
+  },
+  {
+    name: 'Stratégie SI',
+    percentage: '90',
+  },
+  {
+    name: 'Transformation Digitale',
+    percentage: '90',
+  },
+  {
+    name: 'Gestion de projet',
+    percentage: '80',
+  },
+  {
+    name: 'Gestion de budget',
+    percentage: '80',
+  },
+  {
+    name: "Gestion d'équipe",
+    percentage: '80',
+  },
+];
 
-
-const BUSINESS_SKILLS = [{
-  name: "Français",
-  percentage: "100"
-},{
-  name: "Anglais",
-  percentage: "100"
-},{
-  name: "Business Analysis",
-  percentage: "95"
-},
-{
-  name: "Stratégie SI",
-  percentage: "90"
-},
-{
-  name: "Transformation Digitale",
-  percentage: "90"
-},
-{
-  name: "Gestion de projet",
-  percentage: "80"
-}, {
-  name: "Gestion de budget",
-  percentage: "80"
-}, {
-  name: "Gestion d'équipe",
-  percentage: "80"
-}];
-
-const SECTOR_SKILLS = [{
-  name: "Prévoyance Sociale",
-  percentage: "75"
-},
-{
-  name: "Assurance",
-  percentage: "75"
-},
-{
-  name: "Gestion portuaire | Transport maritime",
-  percentage: "75"
-}];
-
+const SECTOR_SKILLS = [
+  {
+    name: 'Prévoyance Sociale',
+    percentage: '75',
+  },
+  {
+    name: 'Assurance',
+    percentage: '75',
+  },
+  {
+    name: 'Gestion portuaire | Transport maritime',
+    percentage: '75',
+  },
+];
 
 const TECHNICAL_SKILLS = [
   {
     name: 'Javascript',
     iconClass: 'fa-js-square',
-    percentage: 80
+    percentage: 80,
   },
   {
-    name: 'PHP', iconClass: ' fa-php',
-    percentage: 80
+    name: 'PHP',
+    iconClass: ' fa-php',
+    percentage: 80,
   },
   {
-    name: 'Python', iconClass: ' fa-python',
-    percentage: 70
+    name: 'Python',
+    iconClass: ' fa-python',
+    percentage: 70,
   },
   {
-    name: 'React', iconClass: 'fa-react',
-    percentage: 80
+    name: 'React',
+    iconClass: 'fa-react',
+    percentage: 80,
   },
   {
-    name: 'SASS', iconClass: 'fa-sass',
-    percentage: 95
+    name: 'SASS',
+    iconClass: 'fa-sass',
+    percentage: 95,
   },
   {
-    name: 'Wordpress', iconClass: 'fa-wordpress',
-    percentage: 95
-  }
+    name: 'Wordpress',
+    iconClass: 'fa-wordpress',
+    percentage: 95,
+  },
 ];
 
 const TOOLS_AND_FRAMEWORKS = {
-  "Front-end": [
-    "React", "Gatsby", "Next.js"
-  ],
-  "Back-end": [
-    "Node.js/Express.js", "Laravel (en cours d'apprentissage)"
-  ],
-  "CMS": [
-    "Wordpress",
-    "Prismic",
-    "Netlify-CMS"
-  ],
-  "Webserver": [
-    "Apache"
-  ]  ,
-  "Jamstack": [
-    "Vercel","Netlify"
-  ]
+  'Front-end': ['React'],
+  'Back-end': ['Node.js/Express.js', "Laravel (en cours d'apprentissage)"],
+  Frameworks: ['Gatsby', 'Next.js'],
+  CMS: ['Wordpress', 'Prismic', 'Netlify-CMS'],
+  Webserver: ['Apache'],
+  Jamstack: ['Vercel', 'Netlify'],
 };
 
-
-const SKILLS = ['Prévoyance Sociale', 'Assurance', 'Banque', 'Portuaire', 'Maritime'];
+const SKILLS = [
+  'Prévoyance Sociale',
+  'Assurance',
+  'Banque',
+  'Portuaire',
+  'Maritime',
+];
 
 const PORTFOLIO = {
   introParagraphs: [
     `Ma double carrière m'a permis de vivre à la fois du côté de la MOE que de l'AMOA. J'ai accompagné plusieurs projets institutionnels en tant que consultants en Europe et Afrique de l'Ouest.`,
     `Egalement, j'ai développé moi-même sites et applications Web en adéquation avec les besoins des mes clients.`,
   ],
-  categories : [
-    "Consulting",
-    "Développement Web"
-  ]
+  categories: ['Consulting', 'Développement Web'],
 };
 
 const CERTIFICATIONS = [
   {
     name: 'SCRUM PSM-1 - 2016',
-    url: "https://www.scrum.org/certificates/144205"
+    url: 'https://www.scrum.org/certificates/144205',
   },
   {
     name: 'Certification Wordpress SkillValue - 2020',
-    url: "https://skillvalue.com/fr/certificate/3B2wX3YtltfJ1rlmfYUGH0MnO9jMKbZb4QvsisaFf8uAcsXgsnZGxUw0hpdx"
+    url:
+      'https://skillvalue.com/fr/certificate/3B2wX3YtltfJ1rlmfYUGH0MnO9jMKbZb4QvsisaFf8uAcsXgsnZGxUw0hpdx',
   },
   {
     name: 'Certification React SkillValue - 2020',
-    url: "https://skillvalue.com/fr/certificate/Nyk0KbypjAvBKvoGMotoCP05EEqfaOoIouf125M2tEbhE3tvrz1FqzlPYbZ3"
+    url:
+      'https://skillvalue.com/fr/certificate/Nyk0KbypjAvBKvoGMotoCP05EEqfaOoIouf125M2tEbhE3tvrz1FqzlPYbZ3',
   },
   {
     name: 'Certification Next.js SkillValue - 2020',
-    url: "https://skillvalue.com/fr/certificate/hRpAoCmxYocFi6JNfnBdGkdwPmASgLJNXCYUSjuLcIi3Nse7wn12scDGfRyF"
+    url:
+      'https://skillvalue.com/fr/certificate/hRpAoCmxYocFi6JNfnBdGkdwPmASgLJNXCYUSjuLcIi3Nse7wn12scDGfRyF',
   },
   {
     name: 'Certification Node.js SkillValue - 2020',
-    url: "https://skillvalue.com/fr/certificate/g92pFMpB6NRNi1Ujq0kJNS7AZ2Vmg5xzfcAk9S3wmUSG4Ee1kvp9lfIIl7Gr"
+    url:
+      'https://skillvalue.com/fr/certificate/g92pFMpB6NRNi1Ujq0kJNS7AZ2Vmg5xzfcAk9S3wmUSG4Ee1kvp9lfIIl7Gr',
   },
   {
     name: 'Certification SEO SkillValue - 2020',
-    url: "https://skillvalue.com/fr/certificate/j5aDHwybYe4bBd7eKlZYcXsvvj30BTI7QHsgdctxWL0sRXTx7HqN1CpjNMTG"
+    url:
+      'https://skillvalue.com/fr/certificate/j5aDHwybYe4bBd7eKlZYcXsvvj30BTI7QHsgdctxWL0sRXTx7HqN1CpjNMTG',
   },
   {
     name: 'Certification Advanced Google Analytics - 2020',
-    url: "https://analytics.google.com/analytics/academy/certificate/Li1y06D6Q0e2GIRQKO6gZA"
+    url:
+      'https://analytics.google.com/analytics/academy/certificate/Li1y06D6Q0e2GIRQKO6gZA',
   },
-  
 ];
 
 module.exports = {
@@ -228,21 +234,21 @@ module.exports = {
   email: EMAIL,
   phone: PHONE_NUMBER,
   address: ADDRESS,
-  siteUrl : SITE_URL,
+  siteUrl: SITE_URL,
   footerUrl: FOOTER_URL,
   freelanceSite: {
     url: OFFICIAL_WEBSITE,
-    title: "Voir mon site de développeur freelance"
+    title: 'Voir mon site de développeur freelance',
   },
   resumeDownload: {
     url: '/content/CV_ROGER-Benjamin.pdf',
-    title: "Télécharger mon CV"
+    title: 'Télécharger mon CV',
   },
   gitHubRepo: {
     url: GITHUB_REPO,
-    title: "Voir le code de ce site sur Github"
+    title: 'Voir le code de ce site sur Github',
   },
   credits: [
-    `Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>`
-  ]
+    `Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>`,
+  ],
 };
