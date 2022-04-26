@@ -35,11 +35,6 @@ const AboutSection = () => (
           <ParticlesBackground />
         </a>
 
-        <a className="mt-2 ml-md-3 btn btn-teal btn-grow border-0 p-3 d-block d-sm-inline-block position-relative" href={config.personalSite.url} title={config.personalSite.title}>
-          <i className="fa fa-laptop mr-2"> </i>{config.personalSite.title}
-          <ParticlesBackground />
-        </a>
-
       </div>
     </section >
   </>
