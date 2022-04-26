@@ -5,7 +5,7 @@ const GITHUB_USERNAME = 'Benjamin-Roger';
 const TWITTER_USERNAME = 'BenjRoger';
 const WHATSAPP_HANDLE = '33658351332';
 const LINKEDIN_USERNAME = 'b-roger';
-const OFFICIAL_WEBSITE = 'https://www.sapiowork.com';
+const OFFICIAL_WEBSITE = 'https://benjaminroger.com';
 const PHONE_NUMBER = '+33 6 58 35 13 32';
 const ADDRESS = 'Paris, FRANCE';
 const EMAIL = 'benjamin.roger@sapiowork.com';
@@ -236,9 +236,9 @@ module.exports = {
   address: ADDRESS,
   siteUrl: SITE_URL,
   footerUrl: FOOTER_URL,
-  freelanceSite: {
+  personalSite: {
     url: OFFICIAL_WEBSITE,
-    title: 'Voir mon site de développeur freelance',
+    title: 'Voir mes coordonnées',
   },
   resumeDownload: {
     url: '/content/CV_ROGER-Benjamin.pdf',

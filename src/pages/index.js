@@ -30,19 +30,13 @@ const AboutSection = () => (
         </div>
         <div className="lead" dangerouslySetInnerHTML={{ __html: config.bio }} />
 
-
-        <a className="mt-2 btn-grow btn border-0 bg-primary text-white p-3 d-block d-sm-inline-block position-relative" href={config.resumeDownload.url} title={config.resumeDownload.title} download>
-          <i className="fa fa-download mr-2"> </i>{config.resumeDownload.title}
-          <ParticlesBackground />
-        </a>
-
         <a className="mt-2 ml-md-3 btn-grow btn text-white border-0 p-3 d-block d-sm-inline-block position-relative" style={{ backgroundColor: 'black' }} href={config.gitHubRepo.url} title={config.gitHubRepo.title}>
           <i className="fab fa-github mr-2"> </i>{config.gitHubRepo.title}
           <ParticlesBackground />
         </a>
 
-        <a className="mt-2 ml-md-3 btn btn-teal btn-grow border-0 p-3 d-block d-sm-inline-block position-relative" href={config.freelanceSite.url} title={config.freelanceSite.title}>
-          <i className="fa fa-laptop mr-2"> </i>{config.freelanceSite.title}
+        <a className="mt-2 ml-md-3 btn btn-teal btn-grow border-0 p-3 d-block d-sm-inline-block position-relative" href={config.personalSite.url} title={config.personalSite.title}>
+          <i className="fa fa-laptop mr-2"> </i>{config.personalSite.title}
           <ParticlesBackground />
         </a>
 
