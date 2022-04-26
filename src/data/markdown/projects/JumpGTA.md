@@ -11,4 +11,4 @@ lang: "fr"
 ---
 Ce site réalisé en Wordpress pour un cabinet de conseil international est optimisé pour la vitesse et le référencement.
 
-Il utilise la libraries GSAP pour introduire des animations liés au scroll de la page.
+La librairie GSAP est utilisé pour les animations liées au scroll de la page.
