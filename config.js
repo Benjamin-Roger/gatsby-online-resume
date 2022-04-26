@@ -133,7 +133,7 @@ const SKILLS = [
 
 const PORTFOLIO = {
   introParagraphs: [
-    `Ma double carrière m'a permis de vivre à la fois du côté de la MOE que de l'AMOA. J'ai accompagné plusieurs projets institutionnels en tant que consultants en Europe et Afrique de l'Ouest.`,
+    `Ma double carrière m'a permis de vivre à la fois du côté de la MOE et de la MOA. J'ai accompagné plusieurs projets institutionnels en tant que consultants en Europe et Afrique de l'Ouest.`,
     `Egalement, j'ai développé moi-même sites et applications Web en adéquation avec les besoins des mes clients.`,
   ],
   categories: ['Consulting', 'Développement Web'],
