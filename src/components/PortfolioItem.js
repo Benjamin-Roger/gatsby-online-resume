@@ -45,7 +45,7 @@ const PortfolioItem = ({ name, company, url, url_project, categories, start_date
                         title={name} alt={name}
                         rel="nofollow">
                         {(url_project.match(`github.com`) ? `Voir le projet sur Github` : `Voir le site`)}
-                        <i className={`ml-2 ` + (url_project.match(`github.com`) ? `fab fa-git-alt` : `fa fa-globe`)} ></i>
+                        <i className={`ml-2 ` + (url_project.match(`github.com`) ? `fab fa-github` : `fa fa-globe`)} ></i>
                     </a>
                 </p>
             ) : ''}

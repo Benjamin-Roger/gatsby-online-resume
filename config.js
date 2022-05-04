@@ -206,7 +206,7 @@ module.exports = {
   // social
   socialLinks: [
     {
-      icon: 'fa-github-alt',
+      icon: 'fa-github',
       name: 'Github',
       url: `https://github.com/${GITHUB_USERNAME}`,
     },
