@@ -46,7 +46,7 @@ export class Sidebar extends Component {
           />
 
 
-          <a className="navbar-brand" href="#page-top">
+          <a className="navbar-brand" href="#about">
             <span className="d-none d-lg-block">
               <img
                 className="img-fluid mx-auto mb-2 p-4"
