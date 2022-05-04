@@ -62,7 +62,7 @@ section.resume-section {
     }
 
     &.timeline {
-      border-left: 5px dotted $primary+50;
+      border-left: 5px dotted rgba($primary, .5);
 
       .align-fix {
         margin-bottom: -20px;
