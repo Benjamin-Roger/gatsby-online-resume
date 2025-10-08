@@ -1,10 +1,10 @@
-@import './bootstrap/bootstrap.min.css';
-
 // Local files
-@import 'variables.scss';
-@import 'mixins.scss';
-@import 'global.scss';
-@import 'nav.scss';
-@import 'resume-item.scss';
-@import 'bootstrap-overrides.scss';
+@use 'variables.scss' as *;
+@use 'mixins.scss' as *;
+@use 'global.scss' as *;
+@use 'nav.scss' as *;
+@use 'resume-item.scss' as *;
+@use 'bootstrap-overrides.scss' as *;
+
+@import './bootstrap/bootstrap.min.css';
 @import './fontawesome/css/all.min.css';

@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import Scrollspy from 'react-scrollspy';
 import Scroll from './Scroll';
 
-import Slide from '@material-ui/core/Slide';
-
-import ParticlesBackground from './ParticlesBackground'
+import Slide from '@mui/material/Slide';
 
 import avatar from '../assets/images/cv_white.png';
 import config from '../../config';
@@ -41,11 +39,6 @@ export class Sidebar extends Component {
           className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
           id="sideNav"
         >
-          <ParticlesBackground
-            reRender={this.state.open}
-          />
-
-
           <a className="navbar-brand" href="#about">
             <span className="d-none d-lg-block">
               <img

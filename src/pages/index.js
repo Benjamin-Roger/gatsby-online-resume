@@ -3,11 +3,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import ResumeItem from '../components/ResumeItem';
-import PortfolioItem from '../components/PortfolioItem';
-import Sidebar from '../components/Sidebar';
 import LineChart from '../components/LineChart';
-import ParticlesBackground from '../components/ParticlesBackground';
+import PortfolioItem from '../components/PortfolioItem';
+import ResumeItem from '../components/ResumeItem';
+import Sidebar from '../components/Sidebar';
 
 import config from '../../config';
 import countriesName from '../utils/countriesName';
@@ -32,7 +31,6 @@ const AboutSection = () => (
 
         <a className="mt-2 ml-md-3 btn-grow btn text-white border-0 p-3 d-block d-sm-inline-block position-relative" style={{ backgroundColor: 'black' }} href={config.gitHubRepo.url} title={config.gitHubRepo.title}>
           <i className="fab fa-github mr-2"> </i>{config.gitHubRepo.title}
-          <ParticlesBackground />
         </a>
 
       </div>
@@ -101,19 +99,19 @@ const SkillSection = () => (
 
       <h3 className="subheading mb-3">
         Compétences métier
-</h3>
+      </h3>
 
       {config.businessSkills.map((skill, key) => <LineChart key={key} title={skill.name} percentage={skill.percentage} className="business-skills" />)}
 
       <h3 className="subheading mt-4 mb-3">
         Compétences sectorielles
-</h3>
+      </h3>
 
       {config.sectorSkills.map((skill, key) => <LineChart key={key} title={skill.name} percentage={skill.percentage} className="sector-skills" />)}
 
       <h3 className="subheading mt-4 mb-3">
         Compétences techniques
-</h3>
+      </h3>
 
       <div className="dev-icons" >
         {config.technicalSkills.map((skill, key) => (
