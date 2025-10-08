@@ -1,6 +1,6 @@
 ---
 name: "Audit SI - Assurance"
-company: "Compagnies d'assurance centrale et ouest-africaines"
+company: "Compagnies d'assurance centrale et ouest-africaines (cliebts FINACTU)"
 url: ""
 url_project: ""
 start_date: "2016"

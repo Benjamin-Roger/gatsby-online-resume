@@ -1,6 +1,6 @@
 ---
 name: "Schémas Directeur du Système d'Information (SDSI)"
-company: "Ports français et ouest-africains"
+company: "Ports français et ouest-africains (clients EY Advisory)"
 url: ""
 url_project: ""
 start_date: "2014"

@@ -1,6 +1,6 @@
 ---
 name: "Assistance à maîtrise d'ouvrage - Projets SI stratégiques"
-company: "Institutions de prévoyance sociale ouest-africaine"
+company: "Institutions de prévoyance sociale ouest-africaine - CNPS & CGRAE (clients FINACTU)"
 url: ""
 url_project: ""
 start_date: "2016"

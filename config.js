@@ -25,9 +25,9 @@ const MENU = [
 const BIO = `<p>Consultant SI et développeur, je suis spécialisé dans les projets Web. J'accompagne également des projets en tant que consultant MOA/AMOA.</p>
 <p>Mes compétences techniques sont accompagnées d'une vraie expérience métier, issue de 8 ans dans le conseil. Je comprends l'enjeu de créer des solutions qui répondent à des besoins métier concrets, sans jargon technique !</p>
 <ul>
-  <li>Expérience multi-secteurs : assurance, sécurité sociale, maritime, gestion portuaire, agrobusiness.</li>
+  <li>Expérience multi-secteurs : fintech, santé, hydraulique / assainissment, gestion des déchets ménagers, assurance, sécurité sociale, maritime, gestion portuaire.</li>
   <li>Missions de conseil : stratégie IT, audit IT, optimisation de processus métier.</li>
-  <li>Technologies principales : React, Next.js, Node.js, Wordpress et Wagtail.</li>
+  <li>Technologies principales : React, Node/Nest, Java/Sprinboot, Docker, AWS.</li>
   <li>A vécu et travaillé en : Côte d'Ivoire, Bénin, Chine, France, Vietnam.</li>
 </ul>`;
 
@@ -67,6 +67,22 @@ const BUSINESS_SKILLS = [
 ];
 
 const SECTOR_SKILLS = [
+    {
+    name: 'Santé',
+    percentage: '75',
+  },
+  {
+    name: 'Gestion des déchets',
+    percentage: '75',
+  },
+  {
+    name: 'Hydraulique / Assainissement',
+    percentage: '75',
+  },
+  {
+    name: 'Fintech',
+    percentage: '75',
+  },
   {
     name: 'Prévoyance Sociale',
     percentage: '75',
@@ -83,13 +99,23 @@ const SECTOR_SKILLS = [
 
 const TECHNICAL_SKILLS = [
   {
-    name: 'Javascript',
-    iconClass: 'fa-js-square',
+    name: 'JS / TS',
+    iconClass: 'fa-js',
     percentage: 80,
   },
   {
-    name: 'PHP',
-    iconClass: ' fa-php',
+    name: 'React',
+    iconClass: 'fa-react',
+    percentage: 80,
+  },
+  {
+    name: 'Java',
+    iconClass: 'fa-java',
+    percentage: 80,
+  },
+  {
+    name: 'Springboot',
+    iconClass: 'fa-spring',
     percentage: 80,
   },
   {
@@ -98,29 +124,30 @@ const TECHNICAL_SKILLS = [
     percentage: 70,
   },
   {
-    name: 'React',
-    iconClass: 'fa-react',
-    percentage: 80,
-  },
-  {
-    name: 'SASS',
-    iconClass: 'fa-sass',
+    name: 'Wordpress',
+    iconClass: 'fa-wordpress',
     percentage: 95,
   },
   {
-    name: 'Wordpress',
-    iconClass: 'fa-wordpress',
+    name: 'Docker',
+    iconClass: 'fa-docker',
+    percentage: 95,
+  },
+  {
+    name: 'AWS',
+    iconClass: 'fa-aws',
     percentage: 95,
   },
 ];
 
 const TOOLS_AND_FRAMEWORKS = {
   'Front-end': ['React'],
-  'Back-end': ['Node.js/Express.js', "Laravel (en cours d'apprentissage)"],
+  'Back-end': ['Node / Nest', "Springboot"],
   Frameworks: ['Gatsby', 'Next.js'],
   CMS: ['Wordpress', 'Prismic', 'Netlify-CMS'],
-  Webserver: ['Apache'],
   Jamstack: ['Vercel', 'Netlify'],
+  DevOps: ['Docker, Terraform, Terragrunt, Gitlab'],
+  Cloud: ['AWS, GCP']
 };
 
 const SKILLS = [

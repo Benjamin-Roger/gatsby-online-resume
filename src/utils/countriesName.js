@@ -3,6 +3,7 @@ const countriesName = {
     fr:"France",
     ci:"Côte d'Ivoire",
     bj:"Bénin",
+    ga:"Gabon",
     cn:"Chine",
     africa:"Multiples pays d'Afrique - Transrégional"
 }
