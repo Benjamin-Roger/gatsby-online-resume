@@ -23,11 +23,11 @@ const MENU = [
 ];
 
 const BIO = `<p>Consultant SI et développeur, je suis spécialisé dans les projets Web. J'accompagne également des projets en tant que consultant MOA/AMOA.</p>
-<p>Mes compétences techniques sont accompagnées d'une vraie expérience métier, issue de 8 ans dans le conseil. Je comprends l'enjeu de créer des solutions qui répondent à des besoins métier concrets, sans jargon technique !</p>
+<p>Mes compétences techniques sont accompagnées d'une vraie expérience métier, issue de 10+ ans dans le conseil en tranformation numérique.</p>
 <ul>
   <li>Expérience multi-secteurs : fintech, santé, hydraulique / assainissment, gestion des déchets ménagers, assurance, sécurité sociale, maritime, gestion portuaire.</li>
   <li>Missions de conseil : stratégie IT, audit IT, optimisation de processus métier.</li>
-  <li>Technologies principales : React, Node/Nest, Java/Sprinboot, Docker, AWS.</li>
+  <li>Technologies principales : React, Node/Nest, Java/SpringBoot, Docker, AWS.</li>
   <li>A vécu et travaillé en : Côte d'Ivoire, Bénin, Chine, France, Vietnam.</li>
 </ul>`;
 

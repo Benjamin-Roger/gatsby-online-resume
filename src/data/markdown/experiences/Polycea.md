@@ -17,14 +17,14 @@ __**Résultats :**__
 * 700k€ de missions signées en 2025
 * Encadrement de missions de conseil et tech
 
-J'interviens également en tant que Développeur full stacks en France et dans les pays d'Afrique francophone.
+J'interviens également en tant que Développeur full stack en France et dans les pays d'Afrique francophone.
 
 __**Technologies :**__
 Java 8 / 17 / 21 (Spring), TS/JS (React, Nest), Python (Flask)
 
 __**Projets réalisés :**__
 * Configuration & déploiement de la solution open source DHIS2 pour le Ministère de la Santé, de l'Hygiène Publique et la Couverture Maladie Universelle de Côte d'Ivoire au titre de la mise en place d'une plateforme de surveillance épidémiologique des maladies climato-sensibles
-* Elaboration de la stratégie numérique du Projet d'Assainissement et de Réilience Urbaine de Côte d'Ivoire
+* Elaboration de la stratégie numérique du Projet d'Assainissement et de Résilience Urbaine de Côte d'Ivoire
 * Développement de la plateforme PassEmploi241 : recherche d'emploi et formation au Gabon
 * Développement d'une solution partagée par un parc de 400 machines
 * Développement de l'application Fintech "Nirio" pour la Française des jeux
